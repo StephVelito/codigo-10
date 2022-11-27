@@ -1,6 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 import { getProfile } from "../../services";
+
+
 
 const Profile = () => {
   const { user: userContext } = useContext(AuthContext);
@@ -30,7 +34,7 @@ const Profile = () => {
       <div className="d-flex justify-content-center mt-3">
         <div className="row">
           <div className="col-12">
-            <h6 className="text-gray">Edit profile</h6>
+            <h6 className="text-gray">Editar perfil</h6>
           </div>
           <div className="col-12 mt-3">
             {user && (
@@ -44,7 +48,7 @@ const Profile = () => {
                   />
                 </div>
                 <div className="col-6">
-                  <label htmlFor="">First Name</label>
+                  <label htmlFor="">Nombres</label>
                   <input
                     type="text"
                     className="form-control"
@@ -52,7 +56,7 @@ const Profile = () => {
                   />
                 </div>
                 <div className="col-6">
-                  <label htmlFor="">Username</label>
+                  <label htmlFor="">Nombre de usuario</label>
                   <input
                     type="text"
                     className="form-control"
@@ -68,47 +72,39 @@ const Profile = () => {
                   />
                 </div>
                 <div className="col-12 mt-3">
-                  <label htmlFor="">Bio</label>
+                  <label htmlFor="">Nombre del Paciente</label>
                   <input
                     type="text"
-                    value={user.bio}
+                    value={user.pet}
                     className="form-control"
                   />
                 </div>
                 <div className="col-12 mt-3">
-                  <label htmlFor="">Blog</label>
+                  <label htmlFor="">Raza</label>
                   <input
                     type="text"
                     className="form-control"
-                    value={user.blog}
+                    value={user.raza}
                   />
                 </div>
                 <div className="col-6 mt-3">
-                  <label htmlFor="">City</label>
+                  <label htmlFor="">Edad</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={user.edad}
+                  />
+                </div>
+                <div className="col-6 mt-3">
+                  <label htmlFor="">Distrito</label>
                   <input
                     type="text"
                     className="form-control"
                     value={user.location}
                   />
                 </div>
-                <div className="col-6 mt-3">
-                  <label htmlFor="">Company</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={user.company}
-                  />
-                </div>
-                <div className="col-6 mt-3">
-                  <label htmlFor="">Country</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={user?.location?.split(" ")[1]}
-                  />
-                </div>
                 <div className="col-12 mt-3">
-                  <label htmlFor="">Password</label>
+                  <label htmlFor="">Contraseña</label>
                   <input
                     type="password"
                     className="form-control"
@@ -116,8 +112,13 @@ const Profile = () => {
                   />
                 </div>
                 <div className="col-12 mt-3 d-flex gap-2">
-                  <button className="btn btn-primary">Save</button>
-                  <button className="btn btn-danger">Cerrar session</button>
+                <Button
+                component={Link}
+                to="/"
+                >
+                 Guardar
+                 </Button>
+                <button className="btn btn-danger">Cerrar session</button>
                 </div>
               </div>
             )}

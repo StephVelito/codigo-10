@@ -1,6 +1,21 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Navigate, Outlet, Link } from "react-router-dom";
+import {
+  AppBar,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+  Button,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const MainLayout = () => {
   const { isAuth, user, logout } = useContext(AuthContext);
@@ -22,20 +37,29 @@ const MainLayout = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <Link className="navbar-brand" href="/">
-            {user.name} {user.lastName}
-            {" > "}
-            {new Date(user.createdAt).toDateString()}
-          </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
+              <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/"
+                >
+                  Inicio
+                </Link>
                 <Link
                   className="nav-link active"
                   aria-current="page"
                   to="/perfil"
                 >
-                  Perfil
+                  Editar Perfil
+                </Link>
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/todoapp"
+                >
+                  Reservar cita
                 </Link>
               </li>
               <li className="nav-item">
@@ -44,7 +68,7 @@ const MainLayout = () => {
                   className="nav-link active text-danger"
                   onClick={logout}
                 >
-                  Logout
+                  Cerrar sesión
                 </a>
               </li>
             </ul>

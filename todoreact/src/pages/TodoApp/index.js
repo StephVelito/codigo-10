@@ -57,7 +57,7 @@ function TodoApp() {
 				<Card variant="outlined">
 					<CardContent>
 						<Typography variant="h4" component="h1">
-							Todo App
+							Cita
 						</Typography>
 						<Divider
 							sx={{

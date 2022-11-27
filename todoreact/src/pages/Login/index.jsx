@@ -21,7 +21,6 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    // null - undefinded - ""
     if (!user.email || !user.password) {
       Swal.fire({
         title: "Error",
@@ -30,7 +29,6 @@ const Login = () => {
       });
       return;
     }
-    //* Entonces si ambos campos estan llenos vamos a guardarlos en localStorage
     const inicio = login(user.email, user.password);
 
     if (!inicio) {
@@ -61,7 +59,7 @@ const Login = () => {
           }}
         >
           <div className="my-3">
-            <h1>Login</h1>
+            <h1>🐾 Ingreso 🐾 </h1>
             <Box my={3}>
               <TextField
                 mt={3}
@@ -88,7 +86,7 @@ const Login = () => {
             </Box>
             <Box my={3}>
               <Button variant="contained" fullWidth onClick={handleLogin}>
-                Ingresar
+              Ingresar
               </Button>
             </Box>
             <Box my={3}>

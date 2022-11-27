@@ -45,15 +45,11 @@ function Home() {
 
 	useEffect(() => {
 		getTasks();
-		// que provoca el []: Que se ejecute solo una vez
 	}, []);
 
 	return (
 		<div className="container my-5">
-			<h1 className="display-3">Todo App</h1>
-			<Link to="/perfil" className="my-3 btn btn-link">
-				Ir a perfil
-			</Link>
+			<h2>Hola</h2>
 			<TaskForm onSubmitFunction={addTask} />
 			<div className="text-primary">
 				<hr />

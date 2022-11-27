@@ -1,10 +1,7 @@
-// Paso1: Importar los componentes de React Router DOM
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// Pas2: Importar nuestras vistas
 import {
 	HomeView,
 	ProfileView,
-	TaskView,
 	LoginView,
 	SignUpView,
 	TodoAppView,
@@ -21,7 +18,6 @@ const Router = () => {
 					<Route path="/" element={<HomeView />} />
 					<Route path="/todoapp" element={<TodoAppView />} />
 					<Route path="/perfil" element={<ProfileView />} />
-					<Route path="/task/:id" element={<TaskView />} />
 				</Route>
 				<Route path="/login" element={<LoginView />} />
 				<Route path="/signup" element={<SignUpView />} />
